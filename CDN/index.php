@@ -3,6 +3,12 @@
 include dirname(__FILE__) . "/GitHelper.php";
 include dirname(__FILE__) . "/config.php";
 header("Access-control-Allow-Origin:*");
+global $url_parse;
+global $url_array;
+global $real_url_n;
+global $real_url_p;
+global $_config;
+global $extension_webp;
 $url_parse = parse_url($_SERVER['REQUEST_URI']);
 /*
 *array(2) {
