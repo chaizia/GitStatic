@@ -54,7 +54,7 @@ function files_upload($username, $token, $repos, $path, $files, &$ret) {
     $ret = api_push($username, $token, "https://api.github.com/repos/" . $username . "/" . $repos . "/contents" . $path, json_encode($data), "PUT");
     $json = (array)json_decode($ret);
     // var_dump($json);
-    $ret = $return !isset($json["message"]);
+     $return !isset($json["message"]);
     //上传需要判断失败或者成功
     
 }
