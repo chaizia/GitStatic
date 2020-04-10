@@ -40,7 +40,7 @@ class GitStatic_Plugin implements Typecho_Plugin_Interface
             $t = new Typecho_Widget_Helper_Form_Element_Text('text_b', NULL, '', _t('插件使用说明：'),
             _t('<ol>
  <li><a href="https://jq.qq.com/?_wv=1027&k=5pK3hCm">加入官方内测群，和作者py吧</a></li>
-            <li><a href="https://">官方的各种姿势的教程</a></li>
+            <li><a href="https://blog.mumuli.cn/379.html">官方的各种姿势的教程</a></li>
             <li><a href="https://">非官方的各种魔改插件指南</a></li>
             </ol>'));
  $form->addInput($t);
