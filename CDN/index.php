@@ -66,8 +66,10 @@ function _die($error) {
         header('Location: https://cdn.jsdelivr.net/gh/' . $GLOBALS["_config"]["username"] . "/" . $GLOBALS["_config"]["repos"] . $GLOBALS["_config"]["path"] . $temp_path);
         die;
       }
-      //header('Location: ' . $GLOBALS["_config"]["site"] . $GLOBALS["_config"]["path"] . $GLOBALS["real_url_n"]);
-      //fastcgi_finish_request();
+      header('Location: ' . $GLOBALS["_config"]["site"] . $GLOBALS["_config"]["path"] . $GLOBALS["real_url_n"]);
+      fastcgi_finish_request();
+      file_put_contents($CacheFile, json_encode(array("lock"=>"ok")));
+      //锁住文件避免多次 待判断 逻辑未完善
       $if_webp = isset($GLOBALS["extension_webp"][$url_info_file["extension"]]) && $GLOBALS["_config"]["webp"];
       $Cache_json = array("webp" => $if_webp);
       if ($if_webp) {
