@@ -68,7 +68,8 @@ function _die($error) {
       }
       header('Location: ' . $GLOBALS["_config"]["site"] . $GLOBALS["_config"]["path"] . $GLOBALS["real_url_p"]);
       fastcgi_finish_request();
-      if(!isset(file_get_contents($CacheFile)["lock"]) && time() - @filemtime($CacheFile) >30))
+      $file_lock=isset(file_get_contents($CacheFile)["lock"]);
+      if(!$file_lock or  ($file_lock && time() - @filemtime($CacheFile) >30))
       {     
       file_put_contents($CacheFile, json_encode(array("lock"=>"ok")));
       }else{
