@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //https://test.9st.top/git/demo/upload/xxx.jpg?time=150000
 include dirname(__FILE__) . "/GitHelper.php";
 include dirname(__FILE__) . "/config.php";
@@ -66,8 +66,15 @@ function _die($error) {
         header('Location: https://cdn.jsdelivr.net/gh/' . $GLOBALS["_config"]["username"] . "/" . $GLOBALS["_config"]["repos"] . $GLOBALS["_config"]["path"] . $temp_path);
         die;
       }
-      //header('Location: ' . $GLOBALS["_config"]["site"] . $GLOBALS["_config"]["path"] . $GLOBALS["real_url_n"]);
-      //fastcgi_finish_request();
+      header('Location: ' . $GLOBALS["_config"]["site"] . $GLOBALS["_config"]["path"] . $GLOBALS["real_url_p"]);
+      fastcgi_finish_request();
+      if(!isset(file_get_contents($CacheFile)["lock"]) && time() - @filemtime($CacheFile) >30))
+      {     
+      file_put_contents($CacheFile, json_encode(array("lock"=>"ok")));
+      }else{
+      die;
+      }
+      //锁住文件避免多次 待判断 逻辑未完      
       $if_webp = isset($GLOBALS["extension_webp"][$url_info_file["extension"]]) && $GLOBALS["_config"]["webp"];
       $Cache_json = array("webp" => $if_webp);
       if ($if_webp) {
