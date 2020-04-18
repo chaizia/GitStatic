@@ -9,6 +9,8 @@ $config["github"]=array(
        "repos"=>"MCDN",
        "Parameter"=>false,
        "CacheTime"=>0,
+       "AnyAgency"=>false,
+       "InstallAgency"=>false,
        "token"=>"81fcd707964fbe80d8af1af9e739eb20bc94f8d8"
           )
 );
