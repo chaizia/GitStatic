@@ -1,4 +1,4 @@
-<?
+<?PHP
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
 * 远去的究竟是什么呢
