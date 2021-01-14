@@ -13,3 +13,5 @@
 # 修改 2020年12月22日 by@chaizi
 
 1. 两处不太规范的写法，解决某些环境下插件无法开启禁用的bug。
+
+![an0na’s github stats](https://github-readme-stats.vercel.app/api?username=chaizia&show_icons=true&theme=merko)
